@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:p="http://primefaces.org/ui"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Гостевая книга</title>
+        <style type="text/css">
+        @import url("css/main.css");
+    </style>
+    </h:head>
+<h:body>
+    <h:form>
+        <div class="top" align="right">
+        Добро пожаловать, #{user.name}! &nbsp;&nbsp;&nbsp;
+        <p:commandLink value="Выйти" action="#{user.logout}" />&nbsp;&nbsp;&nbsp;
+          
+    </div> 
+    <div id="Guestb" align="center"><h1>Гостевая книга</h1></div>
+    <div class="info" align="center">
+         <p:dataTable var="book" value="#{BookBean.books}">
+    <p:column headerText="Тема">
+        <h:outputText value="#{book.subject}" />
+    </p:column>
+ 
+    <p:column headerText="Содержание">
+        <h:outputText value="#{book.content}" />
+    </p:column>
+ 
+    <p:column headerText="Дата">
+        <h:outputText value="#{book.date}" />
+    </p:column>
+ 
+    <p:column headerText="Автор">
+        <h:outputText value="#{book.author}" />
+    </p:column>
+</p:dataTable>
+   
+    <p:button value="Добавить" outcome="newbook"/>
+    </div>
+    </h:form>
+</h:body>
+</html>
+

@@ -1,0 +1,22 @@
+body{
+    background: #FFBF40;
+    font-family:cursive;
+    color:brown;
+}
+.top{
+    background: #BF8F30;
+    color: black;
+    font-family:monospace;
+    font-size: 13pt;
+}
+
+.info{
+    position: absolute;
+    background: #FFD073;
+    left: 190px;
+   
+    padding: 7px;
+    border: solid 1px black;
+    width: 900px;
+    height: 300px;
+}
